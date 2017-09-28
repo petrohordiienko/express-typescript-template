@@ -3,6 +3,6 @@ Realization of primitive Node.js API in TypeScript
 
 Deployment
 
-$ npm i
-$ npm run build
-$ npm start
+$ npm i __
+$ npm run build __
+$ npm start __
