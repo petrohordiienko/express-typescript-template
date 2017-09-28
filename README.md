@@ -1,8 +1,10 @@
 # nodejs-express-ts
 Realization of primitive Node.js API in TypeScript
 
-Deployment
+##Deployment
 
-$ npm i __
-$ npm run build __
-$ npm start __
+```
+$ npm i
+$ npm run build
+$ npm start
+```
