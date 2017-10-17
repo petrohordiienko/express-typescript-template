@@ -1,15 +1,7 @@
 import * as express from 'express';
 import {IRouterMatcher, IRouterMatcherRoutes, IRouterMatcherRoutesMethod} from './IRouterMatcher';
-import * as dotenv from 'dotenv';
-import {dirname} from 'path';
 import {IRouterHelperGroupProps} from './IRouterHelper';
 import RouterMatcher from './RouterMatcher';
-
-const appDir = dirname(require.main.filename);
-
-dotenv.config();
-
-const controllersPath = `${appDir}${process.env['CONTROLLERS_PATH']}`;
 
 export default class RouterHelper {
     public static router: express.Router = express.Router();
@@ -23,7 +15,7 @@ export default class RouterHelper {
             .forEach((method: string) =>
                 groupRoutes[method].forEach((item: IRouterMatcherRoutesMethod) => {
                     const path = props.prefix ? `/${props.prefix}/${item.path}` : item.path;
-                    const controller = require(`${controllersPath}/${item.filePath}`);
+                    const controller = require(`${global['app'].path.controllers}/${item.filePath}`);
                     const instanceController = new controller.default();
 
                     this.router[method](

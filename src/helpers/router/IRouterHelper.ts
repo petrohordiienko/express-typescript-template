@@ -5,4 +5,5 @@ export interface IRouterHelper {
 export interface IRouterHelperGroupProps {
     namespace?: string;
     prefix?: string;
+    middleware?: Array<() => void>
 }
