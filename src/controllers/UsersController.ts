@@ -1,5 +1,5 @@
 import {Response, Request} from 'express';
-import User from '../models/User';
+import User from '../database/models/User';
 
 export default class UserController {
     constructor() {
