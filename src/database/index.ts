@@ -8,6 +8,10 @@ export class Connect {
     public db: Sequelize;
 
     constructor() {
-        this.db = new Sequelize(CONFIG[process.env['NODE_ENV']]);
+        this.db = new Sequelize(Object.assign(
+            {},
+            CONFIG[process.env['NODE_ENV']],
+            {modelPaths: [global['app'].path.models]}
+        ));
     }
 }
