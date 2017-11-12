@@ -11,6 +11,24 @@ export default class User extends Model<User> {
     @Column
     public id: number;
 
+    @Column({
+        field: 'firstName',
+        type: DataType.STRING,
+    })
+    public firstName: string;
+
+    @Column({
+        field: 'lastName',
+        type: DataType.STRING,
+    })
+    public lastName: string;
+
+    @Column({
+        field: 'email',
+        type: DataType.STRING,
+    })
+    public email: string;
+
     @CreatedAt
     @Column({
         field: 'created_at',
