@@ -2,7 +2,6 @@ import './global';
 
 import * as express from 'express';
 import api from './routes/api/index';
-import {Connect} from './database/index';
 
 const app: express.Application = express();
 
