@@ -31,7 +31,7 @@ export default class User extends Model<User> {
 
     @CreatedAt
     @Column({
-        field: 'created_at',
+        field: 'createdAt',
         type: DataType.DATE,
         defaultValue: DataType.NOW,
     })
@@ -39,7 +39,7 @@ export default class User extends Model<User> {
 
     @UpdatedAt
     @Column({
-        field: 'updated_at',
+        field: 'updatedAt',
         type: DataType.DATE,
         defaultValue: DataType.NOW,
     })
