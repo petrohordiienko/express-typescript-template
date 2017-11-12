@@ -3,10 +3,18 @@ import './global';
 import * as express from 'express';
 import api from './routes/api/index';
 
-const app: express.Application = express();
+export default class Server {
+    private _port: number = Number(process.env['PORT']) || 3000;
+    private _app: express.Application;
+    public static app: express.Application;
 
-app.use('/api', api);
+    constructor() {
+        this._app = express();
+        Server.app = this._app;
 
-const port: number = Number(process.env['PORT']) || 3000;
+        this._app.use('/api', api);
+        this._app.listen(this._port, () => console.log(`Listening at http://localhost:${this._port}`));
+    }
+}
 
-app.listen(port, () => console.log(`Listening at http://localhost:${port}`));
+new Server();
