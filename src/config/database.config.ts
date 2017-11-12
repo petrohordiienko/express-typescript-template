@@ -8,7 +8,8 @@ const CONFIG = {
         password: process.env.DEV_DB_PASSWORD,
         database: process.env.DEV_DB_NAME,
         host: process.env.DEV_DB_HOSTNAME,
-        dialect: process.env.DEV_DB_RDBMS
+        dialect: process.env.DEV_DB_RDBMS,
+        migrationStorageTableName: process.env.DEV_DB_MIGRATIONS_TABLE
     },
     test: {
         username: process.env.TEST_DB_USERNAME,
@@ -18,6 +19,14 @@ const CONFIG = {
         dialect: process.env.TEST_DB_RDBMS,
         migrationStorageTableName: process.env.TEST_DB_MIGRATIONS_TABLE
     },
+    production: {
+        username: process.env.PROD_DB_USERNAME,
+        password: process.env.PROD_DB_PASSWORD,
+        database: process.env.PROD_DB_NAME,
+        host: process.env.PROD_DB_HOSTNAME,
+        dialect: process.env.PROD_DB_RDBMS,
+        migrationStorageTableName: process.env.PROD_DB_MIGRATIONS_TABLE
+    },
 };
 
-export default CONFIG;
+export = CONFIG;

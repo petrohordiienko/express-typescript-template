@@ -2,25 +2,25 @@ import * as path from 'path';
 import {IPathHelper} from "./IPathHelper";
 
 export default class PathHelper implements IPathHelper {
-    private _instance: PathHelper;
+    private static _instance: PathHelper = new PathHelper();
 
     constructor() {
-        if (this._instance) {
-            return this._instance;
+        if (PathHelper._instance) {
+            return PathHelper._instance;
         }
 
-        this._instance = this;
+        PathHelper._instance = this;
     }
 
     get app(): string {
-        return `${path.dirname(require.main.filename)}}`;
+        return `${path.dirname(require.main.filename)}`;
     }
 
     get controllers(): string {
-        return `${path.dirname(require.main.filename)}/controllers`;
+        return `${this.app}/controllers`;
     }
 
     get models(): string {
-        return `${path.dirname(require.main.filename)}/models`;
+        return `${this.app}/database/models`;
     }
 }
