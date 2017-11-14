@@ -1,4 +1,4 @@
-import v1 from './versions/v1';
+import v1 from './v1';
 import * as express from 'express';
 
 const api: express.Router = express.Router();

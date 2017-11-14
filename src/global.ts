@@ -1,4 +1,4 @@
-import PathHelper from "./helpers/path/PathHelper";
+import PathHelper from "./utils/path/PathHelper";
 
 Object.defineProperty(global, 'app', {
     get() {
